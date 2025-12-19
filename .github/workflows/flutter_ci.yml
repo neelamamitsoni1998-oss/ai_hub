@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ai_hub
 
     steps:
       - name: Checkout repository
@@ -35,6 +32,9 @@ jobs:
           flutter pub get
           (cd domain && dart pub get)
           (cd data && dart pub get)
+
+      - name: Run tests
+        run: flutter test
 
       - name: Build Android APK
         run: flutter build apk --debug
