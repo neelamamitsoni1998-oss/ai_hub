@@ -24,7 +24,11 @@ jobs:
         run: flutter --version
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          flutter pub get
+          cd domain && dart pub get
+          cd ../data && dart pub get
+      
 
       - name: Analyze code
         run: flutter analyze

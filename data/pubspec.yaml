@@ -1,0 +1,11 @@
+name: data
+description: Data layer for AI Hub
+version: 0.0.1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  domain:
+    path: ../domain
+  dio: ^5.4.0
